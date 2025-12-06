@@ -1,4 +1,4 @@
-import { CardProps } from "@/interfaces/index";
+import { type CardProps } from "@/interfaces/index";
 export default function Card({ title, content }: CardProps) {
   return (
     <div>
