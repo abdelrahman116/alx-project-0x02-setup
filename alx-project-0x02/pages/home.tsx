@@ -3,15 +3,28 @@ import PostModal from "@/components/common/PostModal";
 import { useState } from "react";
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [Open, setOpen] = useState(false);
+  const [cards, setCards] = useState([
+    { id: 1, title: "First Card", content: "This is my First card" },
+    { id: 2, title: "Firgstt Card", content: "This is my First card" },
+  ]);
+
+  const handleSaveCard = (card: {
+    id: number;
+    title: string;
+    content: string;
+  }) => {
+    setCards([...cards, { ...card, id: cards.length + 1 }]);
+    setOpen(false);
+  };
   return (
     <div className="bg-black text-white-200">
       <h1>Welcome Home!</h1>
-      <Card title="First Card" content="This is my First card" />
-      <Card title="Firgstt Card" content="This is my First card" />
-
-      <button onClick={() => setIsOpen(true)}>Add a New Card</button>
-      {isOpen && <PostModal />}
+      {cards.map((card) => (
+        <Card key={card.id} title={card.title} content={card.content} />
+      ))}
+      <button onClick={() => setOpen(true)}>Add a New Card</button>
+      {PostModal(Open, () => setOpen(false), handleSaveCard)}
     </div>
   );
 }
