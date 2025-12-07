@@ -9,3 +9,7 @@ export interface CardProps {
   //   imageSrc: string;
   //   available: boolean;
 }
+export interface ButtonProps {
+  size: "small" | "medium" | "large";
+  shape: "rounded-sm" | "rounded-md" | "rounded-lg";
+}
