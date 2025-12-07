@@ -11,5 +11,5 @@ export interface CardProps {
 }
 export interface ButtonProps {
   size: "small" | "medium" | "large";
-  shape: "rounded-sm" | "rounded-md" | "rounded-lg";
+  shape: "rounded-sm" | "rounded-md" | "rounded-full";
 }

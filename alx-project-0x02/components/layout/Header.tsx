@@ -12,8 +12,8 @@ export default function Header() {
           <li>Home</li>
         </Link>
 
-        <Link href="/PostModal">
-          <li>postmodal</li>
+        <Link href="/posts">
+          <li>posts</li>
         </Link>
       </ul>
     </div>

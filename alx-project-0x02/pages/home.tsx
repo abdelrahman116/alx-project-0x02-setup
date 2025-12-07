@@ -1,5 +1,6 @@
 import Card from "@/components/common/Card";
 import PostModal from "@/components/common/PostModal";
+import Header from "@/components/layout/Header";
 import { useState } from "react";
 
 export default function Home() {
@@ -18,7 +19,8 @@ export default function Home() {
     setOpen(false);
   };
   return (
-    <div className="bg-black text-white-200">
+    <div className=" text-white-200">
+      <Header />
       <h1>Welcome Home!</h1>
       {cards.map((card) => (
         <Card key={card.id} title={card.title} content={card.content} />
